@@ -6,14 +6,14 @@ import {
   Alert,
 } from 'react-native';
 import React, { useEffect, useState } from 'react';
-import Navigation from './Components/Navigation/Navigation';
+import Navigation from './My Components/Navigation/Navigationw';
 // import Navigationwl from './Screens/Universal/Navigationwl';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { showToast } from './Screens/Universal/Input';
 import Deviceinfo from 'react-native-device-info';
 import { AppProvider } from './AppContext';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import Navigationw from './Components/Navigation/Navigationw';
+import Navigationw from './My Components/Navigation/Navigationw';
 import { useFocusEffect } from '@react-navigation/native';
 import { db } from './firebase/FIrebase';
 import { collection, onSnapshot, where } from 'firebase/firestore';

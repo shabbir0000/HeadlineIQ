@@ -1,9 +1,11 @@
 # OSX
 #
 .DS_Store
-
+# Components/Adminmanage
 # Xcode
 #
+
+package-lock.json
 firebase/
 build/
 android/app/google-services.json

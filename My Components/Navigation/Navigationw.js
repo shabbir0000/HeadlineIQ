@@ -2,34 +2,34 @@ import * as React from 'react';
 import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Login from '../Auth/Login';
-import Signup from '../Auth/Signup';
-import Forget from '../Auth/Forget';
-import Newpass from '../Auth/Newpass';
-import Onboard from '../Welcome/Onboard';
-import Verify from '../Auth/Verify';
-import Tabbar from './Tabbar';
-import Addplan from '../Adminmanage/Addplan';
-import Addrider from '../Adminmanage/Addrider';
-import Updateprofile from '../Mainscreens/Updateprofile';
-import Productdetail from '../Mainscreens/Productdetail';
-import Vieworder from '../Mainscreens/Vieworder';
-import Viewuserorder from '../Mainscreens/Viewuserorder';
-import Cart from '../Mainscreens/Cart';
-import Allproduct from '../Mainscreens/Allproduct';
-import Categoryproducts from '../Mainscreens/Categoryproducts';
-import Viewadminorder from '../Adminordermanage/Viewadminorder';
-import Findrider from '../Adminordermanage/Findrider';
-import Rideradminorder from '../Ridermanage/Rideradminorder';
-import ManageAddress from '../Mainscreens/ManageAddress';
-import AddAddress from '../Mainscreens/AddAddress';
-import ViewRiderReport from '../Reports/ViewRiderReport';
-import ViewAdminorders from '../Mainscreens/ViewAdminorders';
-import Viewriderorder from '../Mainscreens/Viewriderorder';
-import MyRiderorders from '../Ridermanage/MyRiderorders';
-import Customerdetail from '../Mainscreens/Customerdetail';
-import ShowProductbystatus from '../Mainscreens/ShowProductbystatus';
-import Home_Screen from '../Main_Screens/Home_Screen';
+// import Login from '../Auth/Login';
+// import Signup from '../Auth/Signup';
+// import Forget from '../Auth/Forget';
+// import Newpass from '../Auth/Newpass';
+import Onboard from '../../My Components/Welcome/Onboard';
+// import Verify from '../Auth/Verify';
+// import Tabbar from './Tabbar';
+// import Addplan from '../Adminmanage/Addplan';
+// import Addrider from '../Adminmanage/Addrider';
+// import Updateprofile from '../Mainscreens/Updateprofile';
+// import Productdetail from '../Mainscreens/Productdetail';
+// import Vieworder from '../Mainscreens/Vieworder';
+// import Viewuserorder from '../Mainscreens/Viewuserorder';
+// import Cart from '../Mainscreens/Cart';
+// import Allproduct from '../Mainscreens/Allproduct';
+// import Categoryproducts from '../Mainscreens/Categoryproducts';
+// import Viewadminorder from '../Adminordermanage/Viewadminorder';
+// import Findrider from '../Adminordermanage/Findrider';
+// import Rideradminorder from '../Ridermanage/Rideradminorder';
+// import ManageAddress from '../Mainscreens/ManageAddress';
+// import AddAddress from '../Mainscreens/AddAddress';
+// import ViewRiderReport from '../Reports/ViewRiderReport';
+// import ViewAdminorders from '../Mainscreens/ViewAdminorders';
+// import Viewriderorder from '../Mainscreens/Viewriderorder';
+// import MyRiderorders from '../Ridermanage/MyRiderorders';
+// import Customerdetail from '../Mainscreens/Customerdetail';
+// import ShowProductbystatus from '../Mainscreens/ShowProductbystatus';
+import Home_Screen from '../../My Components/Main_Screens/Home_Screen';
 
 const Stack = createNativeStackNavigator();
 
@@ -42,7 +42,7 @@ function Navigationw() {
           headerShown: false,
         }}
       >
-        <Stack.Screen name="Login" component={Login} />
+        {/* <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Signup" component={Signup} />
         <Stack.Screen name="Tabbar" component={Tabbar} />
         <Stack.Screen name="Forget" component={Forget} />
@@ -65,11 +65,11 @@ function Navigationw() {
         <Stack.Screen name="ManageAddress" component={ManageAddress} />
         <Stack.Screen name="AddAddress" component={AddAddress} />
         <Stack.Screen name="Findrider" component={Findrider} />
-        {/* <Stack.Screen name="Tabbar" component={Tabbar} /> */}
+        <Stack.Screen name="Tabbar" component={Tabbar} />
         <Stack.Screen name="Newpass" component={Newpass} />
-        <Stack.Screen name="Verify" component={Verify} />
+        <Stack.Screen name="Verify" component={Verify} /> */}
         <Stack.Screen name="Onboard" component={Onboard} />
-        <Stack.Screen name="Addplan" component={Addplan} />
+        {/* <Stack.Screen name="Addplan" component={Addplan} /> */}
         <Stack.Screen name="Home_Screen" component={Home_Screen} />
       </Stack.Navigator>
     </NavigationContainer>
