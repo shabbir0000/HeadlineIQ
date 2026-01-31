@@ -1,18 +1,3 @@
-Perfect 👍
-Neeche main tumhein **complete GitHub README.md** de raha hoon — **copy-paste ready**, professional, aur real-world project jaisa.
-Isme:
-
-* App intro
-* Features
-* Tech stack
-* Model run
-* API run
-* React Native app run
-* Folder structure
-* Example API response
-
-sab cover hai 👇
-
 ---
 
 # 🧠 HeadlineIQ – AI-Powered News Headline Analyzer
