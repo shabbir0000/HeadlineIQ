@@ -1,97 +1,244 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+Perfect 👍
+Neeche main tumhein **complete GitHub README.md** de raha hoon — **copy-paste ready**, professional, aur real-world project jaisa.
+Isme:
 
-# Getting Started
+* App intro
+* Features
+* Tech stack
+* Model run
+* API run
+* React Native app run
+* Folder structure
+* Example API response
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+sab cover hai 👇
 
-## Step 1: Start Metro
+---
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+# 🧠 HeadlineIQ – AI-Powered News Headline Analyzer
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+HeadlineIQ is an AI-powered application that analyzes news headlines and classifies them into **Normal News**, **Medium Sensational**, or **High Clickbait** categories.
+The system uses **Natural Language Processing (NLP)** and an **unsupervised K-Means clustering model** to understand headline structure, emotional intensity, and SEO-related characteristics.
 
-```sh
-# Using npm
-npm start
+In addition to classification, HeadlineIQ provides **SEO insights, platform suitability, and actionable suggestions** to help journalists, bloggers, and content creators improve headline quality.
 
-# OR using Yarn
-yarn start
+---
+
+## 🚀 Key Features
+
+* AI-based headline classification (Normal / Medium / High Clickbait)
+* Emotion analysis using custom emotion scoring
+* SEO & Google Search friendliness evaluation
+* Social media suitability insights
+* Explainable AI (feature contribution analysis)
+* REST API built with FastAPI
+* Mobile app integration using React Native
+
+---
+
+## 🛠️ Tech Stack
+
+### Backend (AI + API)
+
+* Python
+* FastAPI
+* Scikit-learn
+* K-Means Clustering
+* StandardScaler
+* Joblib
+* NLP-based feature engineering
+
+### Frontend (Mobile App)
+
+* React Native
+* JavaScript
+* Fetch API
+
+---
+
+## 📂 Project Structure
+
+```
+news-sensation-model/
+│
+├── api/
+│   ├── main.py                # FastAPI application
+│   ├── feature_engineering.py # Feature extraction & explainability
+│   └── models/
+│       ├── sensational_kmeans_model_v1.1.pkl
+│       └── sensational_scaler_model_v1.1.pkl
+│
+├── mobile-app/
+│   └── HeadlineIQApp/          # React Native application
+│
+├── requirements.txt
+├── README.md
+└── vercel.json (optional)
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## ⚙️ Model & API Setup (Backend)
 
-### Android
+### 1️⃣ Clone the Repository
 
-```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+```bash
+git clone https://github.com/your-username/news-sensation-model.git
+cd news-sensation-model
 ```
 
-### iOS
+### 2️⃣ Create Virtual Environment
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
-
-```sh
-bundle install
+```bash
+python -m venv venv
+source venv/bin/activate   # Linux / Mac
+venv\Scripts\activate      # Windows
 ```
 
-Then, and every time you update your native dependencies, run:
+### 3️⃣ Install Dependencies
 
-```sh
-bundle exec pod install
+```bash
+pip install -r requirements.txt
 ```
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### 4️⃣ Run FastAPI Server
 
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
+```bash
+uvicorn api.main:app --host 0.0.0.0 --port 8000 --reload
 ```
 
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+### 5️⃣ Test API in Browser
 
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+```
+http://127.0.0.1:8000
+```
 
-## Step 3: Modify your app
+Swagger Docs:
 
-Now that you have successfully run the app, let's make changes!
+```
+http://127.0.0.1:8000/docs
+```
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+---
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+## 📡 API Endpoint
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+### POST `/predict`
 
-## Congratulations! :tada:
+#### Request Body
 
-You've successfully run and modified your React Native App. :partying_face:
+```json
+{
+  "headline": "Trump threatens Canada with 100% tariffs if it makes a deal with China"
+}
+```
 
-### Now what?
+#### Response Example
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
+```json
+{
+  "prediction": "Medium Sensational",
+  "cluster_id": 1,
+  "headline_analysis": {
+    "seo_friendly": true,
+    "google_search_friendly": true,
+    "social_media_friendly": true,
+    "best_platforms": [
+      "Google Search",
+      "Google Discover",
+      "Twitter (X)"
+    ],
+    "improvement_suggestion": "This headline is well-balanced. You may slightly enhance emotional wording, but keep it factual."
+  }
+}
+```
 
-# Troubleshooting
+---
 
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
+## 📱 React Native App Setup (APK / Mobile App)
 
-# Learn More
+### 1️⃣ Go to Mobile App Folder
 
-To learn more about React Native, take a look at the following resources:
+```bash
+cd mobile-app/HeadlineIQApp
+```
 
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+### 2️⃣ Install Dependencies
+
+```bash
+npm install
+```
+
+### 3️⃣ Start Metro Server
+
+```bash
+npx react-native start
+```
+
+### 4️⃣ Run on Android
+
+```bash
+npx react-native run-android
+```
+
+> ⚠️ Make sure your **mobile and backend are on the same network**, or use **ngrok** to expose the API.
+
+---
+
+## 🌐 API Integration (React Native Example)
+
+```js
+const analyzeHeadline = async (headline) => {
+  const response = await fetch('http://YOUR_IP:8000/predict', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ headline }),
+  });
+
+  return await response.json();
+};
+```
+
+---
+
+## 🧠 How the Algorithm Works (Brief)
+
+* Headlines are converted into numerical features
+* Features are scaled using StandardScaler
+* K-Means groups headlines into 3 natural clusters
+* Each cluster is mapped to a meaningful label
+* Feature contribution explains prediction logic
+
+---
+
+## 🎯 Use Cases
+
+* News portals
+* Blogging platforms
+* SEO tools
+* Content quality analysis
+* Headline A/B testing
+* AI-powered CMS automation
+
+---
+
+## 📌 Future Improvements
+
+* Transformer-based emotion detection
+* Multilingual headline support
+* Trend-based click prediction
+* Online learning for adaptive clustering
+
+---
+
+## 👨‍💻 Author
+
+**Muhammad Shabbir**
+AI Engineer | IBM Certified AI Professional
+Specialized in NLP, AI Model Deployment, and AI-powered Applications
+
+📧 Open to collaborations and research opportunities
+
+---
+
+
